@@ -7,4 +7,71 @@
 6 animare le altre 2 parole
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-weight: 600;
+}
+#testoAlternato {
+  margin-top: 10rem;
+  margin-inline: auto;
+  border: solid 1px;
+  width: 380px;
+  line-height: 1.6rem;
+}
 
+p {
+  position: relative;
+}
+.parole {
+  margin-left: 5px;
+}
+
+.parole i {
+  animation: movmentText 6s linear infinite;
+  position: absolute;
+  color: rgb(0, 162, 255);
+  overflow: hidden;
+  opacity: 0;
+}
+
+.parole i:nth-child(1) {
+  animation-delay: 0s;
+}
+.parole i:nth-child(2) {
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+.parole i:nth-child(3) {
+  opacity: 0;
+  animation-delay: 4s;
+}
+
+@keyframes movmentText {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  2% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  5% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  17% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
